@@ -100,10 +100,8 @@ gcloud builds submit --region=$LOCATION --tag $LOCATION-docker.pkg.dev/$PROJECT_
 ```bash
 # 部署容器
 # Cloud Run 服务名为 vertex-ai-proxy 
-# --port 80 在此案例中应改为 --port 8080 以匹配 nginx 配置 (gemini-proxy.conf 中监听的端口)
 gcloud run deploy vertex-ai-proxy \
     --region $LOCATION \
-    --port 8080 \
     --image $LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY_NAME/nginx-proxy-gemini:v1
 ```
 
